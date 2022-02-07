@@ -1,0 +1,37 @@
+h1{
+    font-size: 700%;
+    text-align: center;
+    padding-top: 70px;
+}
+
+*{
+    margin: 10px;
+    border: 2px;
+    padding: 10px;
+    
+}
+h2{
+    font-size: 400%;
+    text-align: center;
+}
+#pag1 .btn1{
+    margin-left: 85%;
+    margin-top: 170px;
+}
+.username{
+    background: rgb(147, 147, 211);
+    width: 100%;
+    margin-right: 20px;
+    position: relative;
+}
+
+.list{
+    background: rgb(147, 200, 211);
+    width: 100%;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+
