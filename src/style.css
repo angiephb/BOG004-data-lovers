@@ -21,19 +21,25 @@ h2{
 }
 .username{
     background: rgb(147, 147, 211);
-    width: 100%;
-    margin-right: 20px;
+    width: 750px;
     position: relative;
+    height: 800px;
 }
 
 .list{
     background: rgb(147, 200, 211);
-    width: 100%;
+    width: 600px;
+    height: 800px;
 }
-.flex-container{
+.flex-container ul{
     display: flex;
-    justify-content: space-between;
-    display: none;
+    /*justify-content: space-between;
+    position: relative;*/
+}
+
+.flex-container li{
+    flex: auto;
+    list-style: none;
 }
 .textoenc{
     position: absolute;
