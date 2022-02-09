@@ -1,14 +1,9 @@
+/*Aqui esta la primera pagina*/
 h1{
     font-size: 700%;
     text-align: center;
     padding-top: 70px;
 }
-
-#pag2{
-    margin: 10px; ;
-    border: 2px;
-    padding: 10px;
-} 
 
 h2{
     font-size: 400%;
@@ -16,37 +11,19 @@ h2{
 }
 #pag1 .btn1{
     margin-left: 85%;
-    margin-top: 170px;
+    margin-top: 100px;
     
 }
-.username{
-    background: rgb(147, 147, 211);
-    width: 750px;
-    position: relative;
-    height: 800px;
-}
 
-.list{
-    background: rgb(147, 200, 211);
-    width: 600px;
-    height: 800px;
-}
-.flex-container ul{
-    display: flex;
-    /*justify-content: space-between;
-    position: relative;*/
-}
-
-.flex-container li{
-    flex: auto;
-    list-style: none;
-}
 .textoenc{
     position: absolute;
     top: 10px;
-    z-index: 100;
-    left: 26.5%;
+    z-index: 1;
+    left: 17%;
 }
+
+/*Aqui esta el slider primera pagina*/
+
 .slider{
     position: absolute;
     width: 100%;
@@ -58,7 +35,7 @@ h2{
 }
 .slider ul{
     display: flex;
-    padding: 0;
+    padding: 0px;
     width: 400%;
     animation: cambio 20s infinite alternate;
 }
@@ -69,7 +46,7 @@ h2{
 .slider img{
     filter: brightness(130%);
     width: 100%;
-    height: 800px;
+    height: 700px;
 }
 @keyframes cambio{
     0% {margin-left: 0%;}
@@ -84,3 +61,52 @@ h2{
     75% {margin-left: -300%;}
     100% {margin-left: -300%;}
 }
+
+/*Aqui esta la segunda pagina*/
+
+.flex-container{
+    display:flex;
+    justify-content: space-between;
+    margin: 10px;
+    background-color: blueviolet;
+    padding: 10px;
+    border: 2px solid black;
+    height: 500px;  
+    
+}
+.flex-container div{
+    background: brown;
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    border: 2px solid black;
+    height: 300px;
+}
+
+
+/*
+.username{
+    background: rgb(147, 147, 211);
+    position: relative;
+    padding: 10px;
+    width: 97%;    
+    height: 200px;
+}
+
+.list{
+    background: rgb(147, 200, 211);
+    width: 93%;
+    height: 200px;
+}
+.flex-container ul{
+    display: flex;
+    /*justify-content: space-between;
+    position: relative;
+}
+
+.flex-container li{
+    flex: auto;
+    list-style: none;
+}*/
+

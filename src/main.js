@@ -3,6 +3,8 @@ import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
+document.getElementById("pag2").style.display="none";
+
 const btn= document.getElementById("btn1");
 btn.addEventListener("click", open1 =>{
  document.getElementById("pag2").style.display="block";

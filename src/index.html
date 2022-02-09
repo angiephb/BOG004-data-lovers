@@ -8,12 +8,16 @@
 </head>
 
 <body>
+    <!--Aqui va la pagina  -->
+    
     <section id="pag1" class="pag1">
         <div class="textoenc">
             <h1>GHIBLI LOVERS</h1>
             <h2>Bienvenidos!</h2>
             <button type="button" id="btn1" class="btn1">Continuar</button>
         </div>
+        
+        <!--Aqui va slider pagina 1 -->
 
         <div class="slider">
 
@@ -24,13 +28,28 @@
                 <li> <img src="imagenes.img/img4.jpg" alt=""> </li>
             </ul>
 
-
         </div>
     </section>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
 
-    <section id="pag2" class="flex-container">
+    <!--Aqui va la pagina 2 -->
+    <div id="pag2">
+        <div id="username" class="flex-container">
+            <div>
+            <h3>Hola</h3>
+            <input type="text" id="name" placeholder="Ingresa tu nombre">
+            <button type="button" id="btn2" class="btn2">Ingresar</button>
+            <p id="msg"> </p>
+            </div>
+            <div>
+            <button type="button" id="btn3" class="btn3">Ver más...</button>
+            </div>
+        </div>
+
+    </div>
+
+<!-- <section id="pag2" class="flex-container">
         <ul>
             <li>
                 <main id="username" class="username">
@@ -46,7 +65,7 @@
                 </main>
             </li>
         </ul>
-    </section>
+    </section>-->
 </body>
 
 </html>
