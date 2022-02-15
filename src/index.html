@@ -2,44 +2,116 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <section id="pag1" class="pag1">
-    <div class="textoenc" >
-      <h1>GHIBLI LOVERS</h1>
-      <h2>Bienvenidos!</h2>
-      <button type="button" id="btn1" class="btn1">Continuar</button></div>
+    <!--Aqui va la pagina  -->
+
+    <section id="pag1" class="pag1">
+        <div class="textoenc">
+            <h1>Ghibli Lovers</h1>
+            <h2>Bienvenidos!</h2>
+            <button type="button" id="btn1" class="btn1">Continuar</button>
+        </div>
+
+        <!--Aqui va slider pagina 1 -->
+
+        <div class="slider">
+
+            <ul>
+                <li> <img src="imagenes.img/img1.jpg" alt=""> </li>
+                <li> <img src="imagenes.img/img2.jpg" alt=""> </li>
+                <li> <img src="imagenes.img/img3.jpg" alt=""> </li>
+                <li> <img src="imagenes.img/img4.jpg" alt=""> </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!--Aqui va la pagina 2 -->
+
+    <section id="pag2">
+        <main id="username" class="flex-container">
+            <div class="grid">
+                <h3>Hola</h3>
+                <input type="text" id="name" placeholder="Ingresa tu nombre">
+                <button type="button" id="btn2" class="btn2">Ingresar</button>
+                <p id="msg"> </p>
+            </div>
+            <div class="list">
+                <ul id="list">
+
+                </ul>
+                <button type="button" id="btn3" class="btn3">Ver más...</button>
+            </div>
+        </main>
+
+    </section>
+
+    <!--Aqui va la pagina 3 -->
+
+    <main id="pag3">
+      <header>
+        <h4> <a href="https://gilliam24.github.io/BOG004-data-lovers/src/index.html">Ghibli Lovers</a></h4>
+      </header>
+
+    <!--Aqui van los filtros -->
+
+        <aside id="filterfimls" class="filterfilms">
+              <section id="filtersrt">
+                  <p id="score">RT-Score</p>
+                  <input type="radio" name="score" id="btnrt1" value="bueno">
+                  <label for="btnrt1">Bueno</label>                  
+                  <input type="radio" name="score" id="btnrt2" value="regular">
+                  <label for="btnrt2">Regular</label>                    
+                  <input type="radio" name="score" id="btnrt3" value="mala">
+                  <label for="btnrt3">Mala</label>
+              </section>
+              <section id="filtersvh">
+                  <label for="vehicles">Films que tienen Vehiculos</label>
+                  <input type="radio" name="vehicles" id="vehicles">
+              </section>
+              <section id="filterslc">
+                  <label for="location">Films con locaciones</label>
+                  <input type="radio" name="location" id="location">
+              </section>
+              <section id="filterspj">
+                  <label for="characters">Mostrar todos los personajes</label>
+                  <input type="radio" name="characters" id="characters">
+              </section>
+        </aside>
     
-    <div class="slider">
+    <!--Aqui va el orden -->
+        <aside>
+            <section id="orderaz">
+                <input type="radio" name="az" id="ascendente" value="ascendente">
+                <label for="ascendente">Ordenar A-Z</label>
+            </section>
+            <section id="orderza">
+                <input type="radio" name="za" id="descendente" value="descendente">
+                <label for="descendente">Ordenar Z-A</label>
+            </section>
+            <section id="years">                
+                <p>Ordenar por Año de Lanzamiento</p>
+                  <input type="radio" name="yearsorder" id="btny1" value="reciente">
+                  <label for="btnrt2">Más Reciente</label>                    
+                  <input type="radio" name="yearsorder" id="btny2" value="Antigua">
+                  <label for="btnrt3">Más Antiguo</label>
+            </section>
 
-      <ul>
-        <li> <img src="imagenes.img/img1.jpg" alt=""> </li>
-        <li> <img src="imagenes.img/img2.jpg" alt=""> </li>
-        <li> <img src="imagenes.img/img3.jpg" alt=""> </li>
-        <li> <img src="imagenes.img/img4.jpg" alt=""> </li>
-      </ul>
 
 
-    </div>
-  </section>
-  <div id="root"></div>
-  <script src="main.js" type="module"></script>
 
-  <section id="pag2" class="flex-container">
-    <main id="username" class="username">
-      <h3>Hola</h3>
-      <input type="text" id="name" placeholder="Ingresa tu nombre">
-      <button type="button" id="btn2" class="btn2">Ingresar</button>
-      <p id="msg"> </p>
+
+        </aside>
+
     </main>
-    <main id="list" class="list">
-      <button type="button" id="btn3" class="btn3">Ver más...</button>
-    </main>
-  </section>
+
+    <div id="root"></div>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
