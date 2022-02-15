@@ -1,37 +1,40 @@
 import data from './data/ghibli/ghibli.js';// estas funciones son de ejemplo
 
+const filtervehicles =() =>{ //filtro de vehiculos
+  let vehicles2 = data.films.filter( film => film.vehicles.length !==0) 
 
-
-//export default crear
-//listf.innerHTML='<ul>${template}</ul>';
- 
-
-//export const anotherExample = () => {
-  //return 'OMG';
-//}*/
-
-const filtervehiculos =() =>{
-  let vehicles2= data.films.filter((films)=> {
-  return films.vehicles;
-  })
-
-  .map((films) => {
-    return `${films.vehicles} ${films.title}`;
-  });
-  console.log("vehiculos", vehicles2); 
+  console.log(vehicles2); 
 }
 
-/*const filtropelis =() =>{
-  const vehicles = data.films.filter((films) => films.vehicles = `${ films.title } ${ - films.vehicles }`);
-  console.log( vehicles );
- /* let filtervehiculos= document.getElementById("vehicles");
-  filtervehiculos.innerHTML=vehicles.join('');
- return filtropelis;*/
+const filterlocation =() =>{ //filtro de locaciones
+  let location2 = data.films.filter( film => film.locations.length !==0)
+  console.log(location2);
+}
+// Filtros por score
+const rtgood = () =>{
+  let rtscorebuena= data.films.filter(film =>film.rt_score >= 90)// filtro de puntaje pelicula buena
+  console.log('bueno',rtscorebuena); 
+}
+const rtregular = () =>{
+  let rtscoreregular= data.films.filter(film => film.rt_score >= 80 && film.rt_score < 90 )// filtro de puntaje pelicula regular
+  console.log('regular', rtscoreregular)
+}
+const rtbad = () =>{
+  let rtscorebad= data.films.filter( film=> film.rt_score < 80)// filtro de puntaje pelicula mala
+  console.log('malo', rtscorebad)
+}
+// filtros por personajes
+const characters =() =>{
+  let characters2= data.films.filter( film => {
+   film.people.map(personaje=> console.log(personaje.name))
+   })
 
+  console.log(characters2)
+   /* {
+     
+      console.log('nombres personajes', characters2,"nombre",nombres)
+  }*/
+ 
+  }  
 
-export default filtervehiculos;
-/*const crear =() =>{
-  const template = data.films.map((films) => `<li>${films.title } ${ - films.release_date}</li>`);
-  console.log( template );
-  let list=document.getElementById("list");
-  list.innerHTML = template.join('')*/
+export {filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters};

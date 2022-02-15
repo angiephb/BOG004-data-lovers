@@ -1,4 +1,4 @@
-import filtervehiculos from './data.js';
+import {filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters} from './data.js';
  //import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -37,4 +37,9 @@ btn1.addEventListener("click", open3 =>{
 })
 console.log(data);
 crear();
-filtervehiculos();
+filtervehicles();
+filterlocation();
+rtgood();
+rtregular();
+rtbad();
+characters();
