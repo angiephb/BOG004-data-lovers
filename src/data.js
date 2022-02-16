@@ -1,40 +1,41 @@
 import data from './data/ghibli/ghibli.js';// estas funciones son de ejemplo
-
-const filtervehicles =() =>{ //filtro de vehiculos
+export const filtervehicles =() =>{ //filtro de vehiculos
   let vehicles2 = data.films.filter( film => film.vehicles.length !==0) 
-
-  console.log(vehicles2); 
+ console.log(vehicles2); 
 }
 
-const filterlocation =() =>{ //filtro de locaciones
+export const filterlocation =() =>{ //filtro de locaciones
   let location2 = data.films.filter( film => film.locations.length !==0)
   console.log(location2);
 }
 // Filtros por score
-const rtgood = () =>{
+export const rtgood = () =>{
   let rtscorebuena= data.films.filter(film =>film.rt_score >= 90)// filtro de puntaje pelicula buena
-  console.log('bueno',rtscorebuena); 
+ console.log('bueno',rtscorebuena); 
+ 
 }
-const rtregular = () =>{
+export const rtregular = () =>{
   let rtscoreregular= data.films.filter(film => film.rt_score >= 80 && film.rt_score < 90 )// filtro de puntaje pelicula regular
   console.log('regular', rtscoreregular)
+  
 }
-const rtbad = () =>{
+export const rtbad = () =>{
   let rtscorebad= data.films.filter( film=> film.rt_score < 80)// filtro de puntaje pelicula mala
   console.log('malo', rtscorebad)
 }
 // filtros por personajes
-const characters =() =>{
+export const characters =() =>{
   let characters2= data.films.filter( film => {
-   film.people.map(personaje=> console.log(personaje.name))
+   film.people.map(personaje=> console.log
+    (personaje.name))
    })
 
   console.log(characters2)
-   /* {
-     
-      console.log('nombres personajes', characters2,"nombre",nombres)
-  }*/
+    { 
+      
+      console.log('nombres personajes', characters2)
+  }
  
   }  
 
-export {filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters};
+
