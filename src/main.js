@@ -35,20 +35,27 @@ btn1.addEventListener("click", () => {
 })
 
 
-const contentCard = (film) => {
+const contentCard = (film) => { //creacion de tarjetas
   const card = document.querySelector('.cards');
   const template =
-  `<div class="poster">
-    <img src="${film.poster}" alt="postermovie">
-   </div>
-   <div class="datamovie">
-    <ul id="datos">
-      <li id="tittle"> ${film.title} </li>
-      <li id="director">${film.director} </li>
-      <li id="date"> ${film.release_date}</li>
-      <li id="score"> ${film.rt_score} </li>
-    </ul>
-  </div>`
+  `<div class= "delante">
+    <div class="poster">
+      <img src="${film.poster}" alt="postermovie">
+    </div>
+    <div class="datamovie">
+      <ul id="datos">
+        <li id="tittle"> Titulo: ${film.title} </li>
+        <li id="director">Director: ${film.director} </li>
+        <li id="date">Año de Lanzamiento: ${film.release_date}</li>
+        <li id="score"> Score: ${film.rt_score} </li>
+      </ul>
+    </div>
+    </div>
+  <div class= "atras">
+  <p id=description> ${film.description} <p/p
+  </div>
+  `
+
   const bodyc =document.createElement("div")
   bodyc.classList.add("body-card")
   bodyc.innerHTML=template

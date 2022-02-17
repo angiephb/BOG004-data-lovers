@@ -25,17 +25,20 @@ export const rtbad = () =>{
 }
 // filtros por personajes
 export const characters =() =>{
-  let characters2= data.films.filter( film => {
-   film.people.map(personaje=> console.log
-    (personaje.name))
-   })
+  let characters2= data.films.map( film => 
+   film.people);
+   let characters3= characters2.flat()
+   console.log('nombres personajes', characters3);
+  } 
 
-  console.log(characters2)
-    { 
-      
-      console.log('nombres personajes', characters2)
-  }
- 
-  }  
+ /* export const characters =() =>{
+    let characters2= []
+    data.films.forEach( film => 
+     characters2.push(film.people));
+     let characters3= characters2.flat()
+     console.log('nombres personajes', characters3);
+    }
+     */
+    
 
 
