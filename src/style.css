@@ -182,13 +182,40 @@ h3{
     grid-row: 3/4;
     justify-items: center;
 }
-.templatecard{
-    width: 500px;
-    height: 500px;
-    border: 5px solid white;
+
+/*Aqui esta la segunda pagina*/
+
+
+/*Aqui esta la card*/
+
+.body-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(184, 222, 111);
+    border-radius: 10px;
+    font-family: helvetica;
+    font-size: 20px;
+    text-align: center;
+    width: 240px;
     
-    margin-top: calc(-100px - 5px);
-    background-color: rgb(55, 175, 81);
+    padding: 20px;
+    
+
+}
+.body-card img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.datamovie{
+    padding: 12px;
+    margin-bottom: 10px;
+
+}
+
+.datamovie ul {
+    list-style: none;  
 }
 
 
