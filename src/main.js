@@ -35,24 +35,30 @@ btn1.addEventListener("click", () => {
 })
 
 
-const contentCard = () => {
-  const card = document.querySelector('.card');
-  const template = document.getElementById('templatecard').content;
-  const clone= template.cloneNode(true);
-  const fragment = document.createDocumentFragment();
+const contentCard = (film) => {
+  const card = document.querySelector('.cards');
+  const template =
+  `<div class="poster">
+    <img src="${film.poster}" alt="postermovie">
+   </div>
+   <div class="datamovie">
+    <ul id="datos">
+      <li id="tittle"> ${film.title} </li>
+      <li id="director">${film.director} </li>
+      <li id="date"> ${film.release_date}</li>
+      <li id="score"> ${film.rt_score} </li>
+    </ul>
+  </div>`
+  const bodyc =document.createElement("div")
+  bodyc.classList.add("body-card")
+  bodyc.innerHTML=template
+  card.appendChild(bodyc);
 
-
-  clone.querySelector('.card-img').setAttribute('src', films.poster);
-  clone.querySelector('.card-ul-li')[0].textContent = films.tittle;
-  clone.querySelector('.card-ul-li')[1].textContent = films.director;
-  clone.querySelector('.card-ul-li')[2].textContent = films.release_date;
-  clone.querySelector('.card-ul-li')[3].textContent = films.rt_score;
-
-  fragment.appendChild(clone);
-  card.appendChild(fragment);
-  console.log(contentCard)
 };
 
+data.films.forEach((film)=>{
+  contentCard(film);
+})
 
 console.log(data);
 crear();
