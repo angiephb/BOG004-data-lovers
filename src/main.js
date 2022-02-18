@@ -1,4 +1,4 @@
-import { filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters } from './data.js';
+import { filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters, orderaz, orderza, orderfecha12, orderfecha21} from './data.js';
 //import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -38,7 +38,8 @@ btn1.addEventListener("click", () => {
 const contentCard = (film) => { //creacion de tarjetas
   const card = document.querySelector('.cards');
   const template =
-  `<div class= "delante">
+  `<div class="card">
+  <div class= "delante">
     <div class="poster">
       <img src="${film.poster}" alt="postermovie">
     </div>
@@ -52,7 +53,8 @@ const contentCard = (film) => { //creacion de tarjetas
     </div>
     </div>
   <div class= "atras">
-  <p id=description> ${film.description} <p/p
+  <p id=description> ${film.description} <p/>
+  </div>
   </div>
   `
 
@@ -67,14 +69,84 @@ data.films.forEach((film)=>{
   contentCard(film);
 })
 
+//funcionalidad botones filtros
+
+const btnfilter1 = document.getElementById("btnrt1");// cards rt bueno
+btnfilter1.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+  bodyc.innerHTML= " "
+ let cardrtg= rtgood();
+ cardrtg.forEach((film)=>{
+ contentCard( film);
+ } )
+})
+
+const btnfilter2 = document.getElementById("btnrt2");// cards rt regular
+btnfilter2.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+  bodyc.innerHTML= " "
+ let cardrtr= rtregular();
+ cardrtr.forEach((film)=>{
+ contentCard( film);
+ } )
+})
+
+const btnfilter3 = document.getElementById("btnrt3");// cards rt regular
+btnfilter3.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+  bodyc.innerHTML= " "
+ let cardrtr= rtbad();
+ cardrtr.forEach((film)=>{
+ contentCard( film);
+ } )
+})
+
+const btnfilter4 = document.getElementById("vehicles");// cards films con vehiculos
+btnfilter4.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+bodyc.innerHTML= " "
+ let cardrtr= filtervehicles();
+ cardrtr.forEach((film)=>{
+ contentCard( film);
+ } )
+})
+
+const btnfilter5 = document.getElementById("location");// cards films locaciones
+btnfilter5.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+  bodyc.innerHTML= " "
+ let cardrtr= filterlocation();
+ cardrtr.forEach((film)=>{
+ contentCard( film);
+ })
+})
+
+const btnorder1 = document.getElementById("ascendente");// cards films locaciones
+btnorder1.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+ let cardrtr= orderaz();
+ //cardrtr.forEach((film)=>{
+ contentCard( cardrtr);
+ //})
+})
+
+const btnorder2 = document.getElementById("descendente");// cards orden descendente
+btnorder2.addEventListener("click", () => {
+const bodyc= document.getElementById("cards");
+  bodyc.innerHTML= " "
+ let cardrtr= orderza();
+ cardrtr.forEach((film)=>{
+ contentCard( film);
+ })
+})
 console.log(data);
 crear();
-filtervehicles();
-filterlocation();
-rtgood();
-rtregular();
-rtbad();
+
 characters();
+
+
+orderfecha12();
+orderfecha21();
 
 
 
