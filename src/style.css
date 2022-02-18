@@ -187,61 +187,103 @@ h3{
 
 
 /*Aqui esta la card*/
+.cards{
+    width: 1100px;
+    margin: 50px auto;
+    display:flex;
+    justify-content: center;
+}  
 
 .body-card{
-    display: flex;
+    margin: 10px;
+}
+.card{
+    width:300px;
+    height: 350px;
+    background: rgb(0, 255, 191);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .7s ease;
+}
+.delante, .atras{
+    width: 100%;
+    height: 100%;
+    position:absolute; 
+    top:0;
+    left:0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.adelante{
+    width: 100%;
+
+}
+
+.atras{
+    transform: rotateY(180deg);
+
+    padding:20px;
+    display:felx;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: helvetica;
+}
+
+.body-card:hover .card{
+    transform: rotateY(180deg);
+}
+/*
+display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(184, 222, 111);
     border-radius: 10px;
     font-family: helvetica;
     font-size: 20px;
     text-align: center;
-    width: 240px;
-    
-    padding: 20px;
-    
-
+    width: 300px;
+    margin: 10px 15px 10px 15px;
+    position: relative;
 }
-.body-card img{
+.delante, .atras{
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    --webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+} 
+
+.atras{
+    transform: rotateY(180deg);
+}
+
+.cards .bodycard:hover {
+    transform: rotateY(180deg);
+
+
+
+.body-card img{
+    width: 20%;
     border-radius: 10px;
+    margin-top: 17px;
 }
 
 .datamovie{
-    padding: 12px;
     margin-bottom: 10px;
+    align-items: center;
 
 }
 
-.datamovie ul {
-    list-style: none;  
+ ul {
+    list-style: none; 
+    padding-inline-start: 0px;
 }
 
-
-
-/*
-.username{
-    background: rgb(147, 147, 211);
-    position: relative;
-    padding: 10px;
-    width: 97%;    
-    height: 200px;
-}
-
-.list{
-    background: rgb(147, 200, 211);
-    width: 93%;
-    height: 200px;
-}
-.flex-container ul{
-    display: flex;
-    /*justify-content: space-between;
-    position: relative;
-}
-
-.flex-container li{
-    flex: auto;
-    list-style: none;
+.datamovie ul li{
+    text-align: center;
 }*/
+
 
