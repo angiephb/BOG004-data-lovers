@@ -46,29 +46,61 @@ export const characters =() =>{
 //ORDEN
 
 export const orderaz= () =>{ //orden alfabetico az
-  let orderaz1= data.films.map(film=> film)
-  orderaz1.sort();
-  console.log(orderaz1);
-
+  let orderaz1= data.films.map(film=>film);
+  let orderaz2 = orderaz1.sort((a, b)=>{
+    const tituloa = a.title.toLowerCase();
+    const titulob = b.title.toLowerCase();
+      if (tituloa < titulob){
+        return -1;
+      }else if (tituloa > titulob){
+        return 1;
+      }else {return 0;}
+        
+}); 
+//console.log("o", orderaz2);
+return orderaz2;
 }
+
 export const orderza= () =>{ //orden alfabetico za
-  let orderza1= data.films.map(film=> film.title)
-  orderza1.sort().reverse();
-  //console.log("orden za", orderza1)
-  return orderza1;
-    
+  let orderza1= data.films.map(film=> film)
+  let orderza2 = orderza1.sort((a, b)=>{
+    const tituloa = a.title.toLowerCase();
+    const titulob = b.title.toLowerCase();
+      if (tituloa < titulob){
+        return 1;
+      }else if (tituloa > titulob){
+        return -1;
+      }else {return 0;}
+        
+}); 
+//console.log("o", orderza2);
+return orderza2;
 }
 
-export const orderfecha12= () =>{
-  let orderdate1= data.films.map(film=> film.release_date)
-  orderdate1.sort();
-  console.log("orden año", orderdate1)
+export const orderfecha12= () =>{//orden más antiguo
+  let orderdate1= data.films.map(film=> film)
+  let orderdate2 = orderdate1.sort((a, b)=>{
+      if (a.release_date < b.release_date){
+        return -1;
+      }else if (a.release_date > b.release_date){
+        return 1;
+      }else {return 0;}
+}); 
+//console.log("año1", orderdate2);
+return orderdate2;
 }
 
-export const orderfecha21= () =>{
-  let orderdate2= data.films.map(film=> film.release_date)
-  orderdate2.sort().reverse();
-  console.log("orden año descendente", orderdate2)
+export const orderfecha21= () =>{//orden más reciente
+  let orderdate2= data.films.map(film=> film)
+  let orderdate3 = orderdate2.sort((a,b) =>{
+      if (a.release_date < b.release_date){
+        return 1;
+      }else if (a.release_date > b.release_date){
+        return -1;
+      }else {return 0}
+});
+//console.log("año2", orderdate3);
+return orderdate3;
 }
 
 
