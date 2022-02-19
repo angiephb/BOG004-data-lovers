@@ -1,4 +1,4 @@
-import { filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters, orderaz, orderza, orderfecha12, orderfecha21 } from './data.js';
+import { filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters, orderaz, orderza, orderfecha12, orderfecha21, stadistics } from './data.js';
 //import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -165,7 +165,7 @@ console.log(data);
 crear();
 
 characters();
-
+stadistics();
 
 
 
