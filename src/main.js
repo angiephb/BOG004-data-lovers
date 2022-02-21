@@ -16,7 +16,7 @@ msg.innerHTML = " ";
 let get = document.getElementById("btn2");// le dimos funcionalidad al boton ingresar para mostar el msj concatenado
 get.addEventListener("click", () => {
   const nameuser = document.getElementById("name").value;// Mostramos el msj con el nombre del usuario
-  msg.innerHTML = nameuser + ' Aquí podras ver una pelicula a tu gusto y conocer algunas curiosidades ';
+  msg.innerHTML = nameuser.toUpperCase() + ' , aquí podras ver una pelicula a tu gusto y conocer algunas curiosidades. ';
 })
 const crear = () => { //creamos la lista usando la data
   const templatelist = data.films.map((films) => `<li>${films.title} ${- films.release_date}</li>`);
