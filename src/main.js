@@ -1,4 +1,4 @@
-import { filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters, orderaz, orderza, orderfecha12, orderfecha21, stadistics } from './data.js';
+import { filtervehicles, filterlocation, rtgood, rtregular, rtbad, orderaz, orderza, orderfecha12, orderfecha21, stadistics } from './data.js';
 //import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -20,7 +20,7 @@ get.addEventListener("click", () => {
 })
 const crear = () => { //creamos la lista usando la data
   const templatelist = data.films.map((films) => `<li>${films.title} ${- films.release_date}</li>`);
-  console.log(templatelist);
+  //console.log(templatelist);
   let list = document.getElementById("list");
   list.innerHTML = templatelist.join('')
 }
@@ -74,7 +74,7 @@ const btnfilter1 = document.getElementById("btnrt1");// cards rt bueno
 btnfilter1.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardrtg = rtgood();
+  let cardrtg = rtgood(data);
   cardrtg.forEach((film) => {
     contentCard(film);
   })
@@ -84,7 +84,7 @@ const btnfilter2 = document.getElementById("btnrt2");// cards rt regular
 btnfilter2.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardrtr = rtregular();
+  let cardrtr = rtregular(data);
   cardrtr.forEach((film) => {
     contentCard(film);
   })
@@ -94,7 +94,7 @@ const btnfilter3 = document.getElementById("btnrt3");// cards rt regular
 btnfilter3.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardrtb = rtbad();
+  let cardrtb = rtbad(data);
   cardrtb.forEach((film) => {
     contentCard(film);
   })
@@ -104,7 +104,7 @@ const btnfilter4 = document.getElementById("vehicles");// cards films con vehicu
 btnfilter4.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardve = filtervehicles();
+  let cardve = filtervehicles(data);
   cardve.forEach((film) => {
     contentCard(film);
   })
@@ -114,7 +114,7 @@ const btnfilter5 = document.getElementById("location");// cards films locaciones
 btnfilter5.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardlo = filterlocation();
+  let cardlo = filterlocation(data);
   cardlo.forEach((film) => {
     contentCard(film);
   })
@@ -124,7 +124,7 @@ const btnorder1 = document.getElementById("ascendente");// cards orden films a-z
 btnorder1.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardaz = orderaz();
+  let cardaz = orderaz(data);
   cardaz.forEach((film) => {
     contentCard(film);
   })
@@ -134,7 +134,7 @@ const btnorder2 = document.getElementById("descendente");// cards orden descende
 btnorder2.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardza = orderza();
+  let cardza = orderza(data);
   cardza.forEach((film) => {
     contentCard(film);
   })
@@ -144,7 +144,7 @@ const btnorderdate1 = document.getElementById("btny2");// cards lanzamiento mas 
 btnorderdate1.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardyear = orderfecha12();
+  let cardyear = orderfecha12(data);
   cardyear.forEach((film) => {
     contentCard(film);
   })
@@ -154,18 +154,18 @@ const btnorderdate2 = document.getElementById("btny1");// cards lanzamiento mas 
 btnorderdate2.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
-  let cardyear = orderfecha21();
+  let cardyear = orderfecha21(data);
   cardyear.forEach((film) => {
     contentCard(film);
   })
 })
 
 
-console.log(data);
+
 crear();
 
-characters();
-stadistics();
+
+stadistics(data);
 
 
 

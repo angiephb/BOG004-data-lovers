@@ -1,111 +1,241 @@
-import {filtervehicles, filterlocation, rtgood, rtregular, rtbad, characters, orderaz, orderza, orderfecha12, orderfecha21, stadistics} from '../src/data.js';
+import {filtervehicles, filterlocation, rtgood, rtregular, rtbad, orderaz, orderza, orderfecha12, orderfecha21, stadistics} from '../src/data.js';
 //, filterlocation, rtgood, rtregular, rtbad, characters}
-let filterv=[
-  {
+let filterv={
+  "films": [
+  {  //primer film
+    "title": "Castle in the Sky",
     "vehicles":[
       {
         "name":"Air Destroyer Goliath"
       }
-    ]
-  },
+    ],
+    "locations": [
+      {
+        "name": "Gondoa"
+      }
+
+    ],
+    "rt_score": "100"
+  }, // termina primer film
   {
+    "title": "Kiki's Delivery Service",
     "vehicles":[
       {
         "name":"Red Wing"
 
       }
-    ]
+    ],
+    "locations": [
+      {
+        "name": "Seiji's House"
+      }
+
+    ],
+    "rt_score": "85"
   },
   {
-    "vehicles":[]
+    "title": "When Marnie Was There",
+    "vehicles":[],
+    "locations": [],
+    "rt_score": "41"
   }
 ]
+}
 
-describe('filtervehicles', () => {
+describe('filtervehicles', () => { //test filtro vehiculos
   it('is a function', () => {
     expect(typeof filtervehicles).toBe('function');
   });
 
   it('deberia retornar las peliculas que contienen vehiculos', () => {
-    const result= filtervehicles('vehicles',true, filterv)
-    expect(result).toHavelength(1);
-  });
-  it('deberia retornar las peliculas que contienen vehiculos', () => {
-    const result= filtervehicles('vehicles',true, filterv)
-    expect(result).toHavelength(0);
+    const result= filtervehicles(filterv)
+    expect(result).toHaveLength(2);
   });
 })
-/*describe('filterlocation', () => {
+
+describe('filterlocation', () => { //test filtro locaciones
   it('is a function', () => {
     expect(typeof filterlocation).toBe('function');
   });
 
   it('deberia retornar las peliculas que contienen locaciones', () => {
-    expect(filterlocation(movieslocation)).toEqual(locationdif);
+    const result= filterlocation(filterv)
+    expect(result).toHaveLength(2);
   });
-})*/
+})
 
-
-
-
-/*xdescribe('anotherExample', () => {
+describe('rtgood', () => { //test filtro rt buena
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof rtgood).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('deberia retornas las peliculas con buena puntuacion', () => {
+    const result= rtgood(filterv)
+    expect(result).toHaveLength(1);
   });
-});
+})
 
-/* importamos el objeto `validator`, que contiene las funciones `isValid` y `maskify`
-import validator from '../src/validator';
-
-describe('validator', () => {
-  it('debería ser un objeto', () => {
-    expect(typeof validator).toBe('object');
+describe('rtregular', () => { //test filtro rt regular
+  it('is a function', () => {
+    expect(typeof rtregular).toBe('function');
   });
 
-  describe('validator.isValid', () => {
-    it('debería ser una función', () => {
-      expect(typeof validator.isValid).toBe('function');
-    });
+  it('deberia retornas las peliculas con puntuacion regular', () => {
+    const result= rtregular(filterv)
+    expect(result).toHaveLength(1);
+  });
+})
 
-    it('debería retornar true para "4083952015263"', () => {
-      expect(validator.isValid('4083952015263')).toBe(true);
-    });
-
-    it('debería retornar true para "79927398713"', () => {
-      expect(validator.isValid('79927398713')).toBe(true);
-    });
-
-    it('debería retornar false para "1234567890"', () => {
-      expect(validator.isValid('1234567890')).toBe(false);
-    });
+describe('rtbad', () => { //test filtro rt malo
+  it('is a function', () => {
+    expect(typeof rtbad).toBe('function');
   });
 
-  describe('validator.maskify', () => {
-    it('debería ser una función', () => {
-      expect(typeof validator.maskify).toBe('function');
-    });
-
-    it('Debería retornar "############5616" para "4556364607935616"', () => {
-      expect(validator.maskify('4556364607935616')).toBe('############5616');
-    });
-
-    it('Debería retornar "1" para "1"', () => {
-      expect(validator.maskify('1')).toBe('1');
-    });
-
-    it('Debería retornar "######orld" para "helloworld"', () => {
-      expect(validator.maskify('helloworld')).toBe('######orld');
-    });
+  it('deberia retornas las peliculas con mala puntuacion', () => {
+    const result= rtbad(filterv)
+    expect(result).toHaveLength(1);
   });
-});
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-*/
+})
+
+describe('orderaz', () => { //test orden az
+  it('is a function', () => {
+    expect(typeof orderaz).toBe('function');
+  });
+
+  it('deberia retornar los titulos de las peliculas ordenados', () => {
+    const arrinit= {
+      "films":[
+      {  //primer film
+        "title": "Kiki's Delivery Service"
+        }, // termina primer film
+      {
+        "title": "Castle in the Sky" 
+      },
+      {
+        "title": "When Marnie Was There",
+      }
+    ]}
+    const result=[
+      {  //primer film
+        "title": "Castle in the Sky"
+      }, // termina primer film
+      {
+        "title": "Kiki's Delivery Service"
+      },
+      {
+        "title": "When Marnie Was There"
+      }
+    ]
+    expect(orderaz(arrinit)).toEqual(result);
+  });
+})
+
+describe('orderza', () => { //test orden za
+  it('is a function', () => {
+    expect(typeof orderza).toBe('function');
+  });
+
+  it('deberia retornar los titulos de las peliculas ordenados de forma descendente', () => {
+    const arrinit= {
+      "films":[
+      {  //primer film
+        "title": "Kiki's Delivery Service"
+        }, // termina primer film
+      {
+        "title": "Castle in the Sky" 
+      },
+      {
+        "title": "When Marnie Was There",
+      }
+    ]}
+    const result=[
+      {  //primer film
+        "title": "When Marnie Was There"
+      }, // termina primer film
+      {
+        "title": "Kiki's Delivery Service"
+      },
+      {
+        "title": "Castle in the Sky"
+      }
+    ]
+    expect(orderza(arrinit)).toEqual(result);
+  });
+})
+
+describe('orderfecha12', () => { //test orden mas antiguo
+  it('is a function', () => {
+    expect(typeof orderfecha12).toBe('function');
+  });
+
+  it('deberia retornar las peliculas ordenadas por el año de lanzamiento mas antiguo a mas reciente', () => {
+    const arrinit= {
+      "films":[
+      {  //primer film
+        "release_date": "2002"
+        }, // termina primer film
+      {
+        "release_date": "1986"
+      },
+      {
+        "release_date": "1991",
+      }
+    ]}
+    const result=[
+      {  //primer film
+        "release_date": "1986"
+      }, // termina primer film
+      {
+        "release_date": "1991",
+      },
+      {
+        "release_date": "2002",
+      }
+    ]
+    expect(orderfecha12(arrinit)).toEqual(result);
+  });
+})
+
+describe('orderfecha21', () => { //test orden mas reciente
+  it('is a function', () => {
+    expect(typeof orderfecha21).toBe('function');
+  });
+
+  it('deberia retornar las peliculas ordenadas por el año de lanzamiento mas reciente a mas antiguo', () => {
+    const arrinit= {
+      "films":[
+      {  //primer film
+        "release_date": "2002"
+        }, // termina primer film
+      {
+        "release_date": "1986"
+      },
+      {
+        "release_date": "1991",
+      }
+    ]}
+    const result=[
+      {  //primer film
+        "release_date": "2002"
+      }, // termina primer film
+      {
+        "release_date": "1991",
+      },
+      {
+        "release_date": "1986",
+      }
+    ]
+    expect(orderfecha21(arrinit)).toEqual(result);
+  });
+})
+
+describe("stadistics", () => { //test promedio estadistica
+
+  it('is a function', () => {
+    expect(typeof stadistics).toBe('function');
+  });
+  test('deberia retornar el promedio de los rt score', () => {
+    expect(stadistics(filterv)).toBe( 75.33333333333333);
+  });
+})
+  
