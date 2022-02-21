@@ -116,6 +116,6 @@ export const stadistics= (data) =>{
    return acum + valor;
  });
  let promedio= sum/(arr2.length);
- console.log(promedio)
+ //console.log(promedio)
  return promedio
 }
