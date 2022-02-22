@@ -246,7 +246,6 @@ h4 a{
 
 .flex3{
     display: flex;
-       
 }
 
 .filterfilms{
@@ -256,7 +255,7 @@ font-size: 18px;
 font-style: bolder;
 color:rgb(43, 82, 151);
 border-radius: 10px;
-height: 100%;
+height: 405px;
 background: transparent;
 box-shadow:2px 2px 15px rgb(43, 82, 151),
            2px 2px 15px rgb(43, 82, 151),
@@ -336,6 +335,29 @@ input[type="radio"]:checked + label{
 input[type="radio"]:checked + label:before{
 display: none;
 }
+.textf{
+    margin-top:58px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.promedio{
+    padding: 25px 10px;
+    margin-left: 50px;
+    margin-top:20px;
+    font-family: helvetica;
+    font-size: 25px;
+    font-style: bold;
+    color:rgb(43, 82, 151);
+    border-radius: 10px;
+    width:334.15px;
+    height: 180px;
+    text-align:justify;
+    background: transparent;
+    box-shadow:2px 2px 15px rgb(218, 80, 82),
+               2px 2px 15px rgb(218, 80, 82),
+               2px 2px 15px rgb(218, 80, 82);   
+}
 
 /*Aqui esta la card*/
 .cards{
@@ -354,7 +376,8 @@ display: none;
 .card{
     width: 300px;
     height: 480px;
-    background: rgb(0, 255, 191);
+    color:rgb(255, 255, 255);
+    background: rgb(184, 222, 111);
     border-radius: 10px;
     position: relative;
     transform-style: preserve-3d;
@@ -415,5 +438,164 @@ display: none;
     list-style: none; 
     padding-inline-start: 0px;
 }
+/*RESPONSIVE*/
+/*@media screen and (max-width:1024px) {
+    
+}*/
+    
+@media screen and (max-width:768px) {
+    h1{
+   font-size: 120px ;
+    }
+    
+    h2{
+        font-size: 40px;
+    }
+    #pag1 .btn1{
+        height: 35px;
+        width: 150px;
+        font-size:20px;
+        margin-left: 85px;
+    }
+    .textoenc{
+        left:30%;
+    }
+    .slider img{
+        height: 667px;
+    }
 
+    .list ul{
+        font-size:16px;
+        line-height: 30px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    .flex-container div:first-child{  
+        width: 400px;
+    }
+    #msg{
+        font-size: 18px;
+    }
+}
 
+@media screen and (max-width:480px) {
+    h1{
+   font-size: 120px ;
+    }
+    
+    h2{
+        font-size: 40px;
+    }
+    #pag1 .btn1{
+        height: 35px;
+        width: 150px;
+        font-size:20px;
+        margin-left: 85px;
+    }
+    .textoenc{
+        left:17%;
+    }
+    .slider img{
+        width: 480px;
+        height: 620px;
+    }
+    .flex-container{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        background: rgb(248, 245, 239);
+        height: 1600px;
+        align-items: center;
+        padding: 0px;
+    }
+    .flex3{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .cards{
+        flex-direction: column;
+        flex-wrap: nowrap; 
+        
+        width: 480px;
+        align-items: center;
+    }
+    .flex3{
+        align-items: center;
+        margin-right: 27px;
+    }
+    .promedio{
+        margin-right: 27px;
+    }
+    
+    .filterfilms{
+        margin-left:27px;
+    }
+    
+   
+
+}
+
+@media screen and (max-width:320px) {
+        h1{
+        font-size: 120px ;
+         }
+         
+         h2{
+             font-size: 40px;
+         }
+         #pag1{
+             
+
+         }
+         #pag1 .btn1{
+             height: 35px;
+             width: 150px;
+             font-size:20px;
+             margin-left: 85px;
+         }
+         .textoenc{
+            left:5%;
+         }
+         .slider{
+            background-image: url(imagenes.img/img320.jpg);
+            background-size: cover;
+         }
+         .slider img{
+            display: none;
+         }
+
+         .flex-container div{
+             width: 320px;
+         }
+         .flex-container{
+             flex-direction: column;
+             flex-wrap: nowrap;
+             background: rgb(248, 245, 239);
+             height: 1600px;
+             align-items: center;
+             padding: 0px;
+         }
+         .flex3{
+             flex-direction: column;
+             flex-wrap: nowrap;
+         }
+         .cards{
+             flex-direction: column;
+             flex-wrap: nowrap; 
+             
+             width: 480px;
+             align-items: center;
+         }
+         .flex3{
+             align-items: center;
+             margin-right: 27px;
+         }
+         .promedio{
+             margin-right: 27px;
+         }
+         
+         .filterfilms{
+             margin-left:27px;
+         }
+}
+    

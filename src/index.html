@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
@@ -53,14 +54,15 @@
     </section>
 
     <!--Aqui va la pagina 3 -->
-    
+
     <section id="pag3">
         <header>
-                <h4> <a href="https://gilliam24.github.io/BOG004-data-lovers/src/index.html">Ghibli Lovers</a></h4>
+            <h4> <a href="https://gilliam24.github.io/BOG004-data-lovers/src/index.html">Ghibli Lovers</a></h4>
         </header>
-    
-    <!--Aqui van los filtros -->
-    <section class="flex3">
+
+        <!--Aqui van los filtros -->
+        <section class="flex3">
+            <aside class="textf">
         <aside id="filterfimls" class="filterfilms">
                 <section id="filtersrt">
                     <p id="score">RT-Score</p>
@@ -69,7 +71,7 @@
                     <input type="radio" name="filtros" id="btnrt2" value="regular">
                     <label for="btnrt2">Regular</label>
                     <input type="radio" name="filtros" id="btnrt3" value="mala">
-                    <label for="btnrt3">Mala</label>                                       
+                    <label for="btnrt3">Mala</label>
                 </section>
                 <section id="filtersvh">
                     <input type="radio" name="filtros" id="vehicles" value="vehiculos">
@@ -79,37 +81,43 @@
                     <input type="radio" name="filtros" id="location" value="locaciones">
                     <label for="location">Films con locaciones</label>
                 </section>
-                   
-    <!--Aqui va el orden -->
-        
+
+                <!--Aqui va el orden -->
+
                 <section id="orderaz">
                     <input type="radio" name="filtros" id="ascendente" value="ascendente">
-                    <label for="ascendente">Ordenar A-Z</label>                  
+                    <label for="ascendente">Ordenar A-Z</label>
                 </section>
                 <section id="orderza">
                     <input type="radio" name="filtros" id="descendente" value="descendente">
-                    <label for="descendente">Ordenar Z-A</label>  
+                    <label for="descendente">Ordenar Z-A</label>
                 </section>
                 <section id="years">
                     <p>Ordenar por Año de Lanzamiento</p>
                     <input type="radio" name="filtros" id="btny1" value="mas reciente">
-                    <label for="btny1">Más Reciente</label>                    
+                    <label for="btny1">Más Reciente</label>
                     <input type="radio" name="filtros" id="btny2" value="mas antiguo">
                     <label for="btny2">Más Antiguo</label>
-                    
+                   
                 </section>
+                
+            </aside>
+            <aside id="promedio" class="promedio">
+                
+            </aside>
         </aside>
-        <!--Aqui va la card -->
-        <section id="cards" class="cards">
-       
-        </section>   
-    </section>
-        
-    
-   
 
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
+            <!--Aqui va la card -->
+            <section id="cards" class="cards">
+
+            </section>
+        </section>
+
+
+
+
+        <div id="root"></div>
+        <script src="main.js" type="module"></script>
 </body>
 
 </html>
