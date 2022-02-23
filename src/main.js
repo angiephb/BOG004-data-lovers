@@ -78,6 +78,7 @@ btnfilter1.addEventListener("click", () => {
   cardrtg.forEach((film) => {
     contentCard(film);
   })
+  
 })
 
 const btnfilter2 = document.getElementById("btnrt2");// cards rt regular
@@ -90,7 +91,7 @@ btnfilter2.addEventListener("click", () => {
   })
 })
 
-const btnfilter3 = document.getElementById("btnrt3");// cards rt regular
+const btnfilter3 = document.getElementById("btnrt3");// cards rt malas
 btnfilter3.addEventListener("click", () => {
   const bodyc = document.getElementById("cards");
   bodyc.innerHTML = " "
@@ -160,12 +161,13 @@ btnorderdate2.addEventListener("click", () => {
   })
 })
 
-
+const msjpro= document.getElementById("promedio");
+  msjpro.innerHTML= "Studio Ghibli es uno de los estudios de animación más reconocidos a nivel mundial, contando con un promedio de "+ stadistics(data) + " de Rotten-Tomatoes Score de todas sus películas."
 
 crear();
 
 
-stadistics(data);
+
 
 
 
